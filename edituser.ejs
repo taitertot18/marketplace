@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Notusingthis.com</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/css/styles.css" rel="stylesheet" />
+ 
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        background-image: url('assets/img/5.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        }
+ 
+        h1 {
+        text-align: center;
+        color: #333;
+        }
+ 
+        .ACC {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 20px;
+        }
+ 
+        fieldset {
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        margin: 10px;
+        padding: 10px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 260px; /* Slightly reduced width */
+        max-width: calc(100% - 20px); /* Adjusted maximum width */
+        overflow: hidden; /* Hides any content that overflows */
+        }
+ 
+        fieldset img {
+        opacity: 0.5; /* You can adjust the opacity value (0 being fully transparent, 1 being fully visible) */
+        }
+ 
+        legend {
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #333;
+        }
+ 
+        label {
+        display: block;
+        margin-bottom: 8px;
+        color: #555;
+        }
+ 
+ 
+        input {
+        width: calc(100% - 16px);
+        padding: 5px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        font-size: 14px;
+        border-radius:10px;
+        background-color: #fafafa;
+        border:0;
+        box-shadow:0 0 4px rgba(0,0,0,0.3);
+        transition: .3s box-shadow;
+        }
+ 
+        .input:hover {
+        box-shadow:0 0 4px rgba(57, 56, 56, 0.5);
+        }
+       
+        /*
+        button {
+        padding: 4px;
+        font-size: 14px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        }
+ 
+        button:hover {
+        background-color: #0056b3;
+        }
+ 
+        */
+ 
+        #outputMessage {
+        text-align: center;
+        margin-top: 20px;
+        color: orange;
+        font-size: 18px;
+        }
+ 
+        .form-container {
+            margin-top: 100px; /* Adjust this value to leave space for the navbar */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+ 
+        /* Adjust the width and margin as needed for the fieldsets */
+        .form-container fieldset {
+            /* ... Your existing fieldset styles ... */
+            width: 300px;
+            margin: 10px;
+        }
+ 
+        .password-container {
+    position: relative;
+    width: 80%;
+    margin-bottom: 10px;
+    }
+ 
+    .password-container input[type="password"] {
+    width: 100%;
+    padding-right: 30px;
+    font-size: 14px;
+    }
+ 
+    .password-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    cursor: pointer;
+    width: 20px; /* Adjust this as per the image size */
+        }  
+ 
+ 
+ 
+/* CSS */
+.form-container fieldset form button {
+  display: inline-block;
+  margin: 0 5px; /* Adjust the margin for desired spacing */
+}
+ 
+.button-75 {
+  align-items: center;
+  background-image: linear-gradient(135deg, #817579 40%, #c4bdb9);
+  border: 0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  font-family: "Codec cold",sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  height: 54px;
+  max-width: 100%;
+  text-decoration: none;
+  text-transform: uppercase;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  padding: 18px;
+}
+ 
+.button-75:active {
+  outline: 0;
+}
+ 
+.button-75:hover {
+  outline: 0;
+  background-image: linear-gradient(135deg, #b85979 40%, #c4bdb9);
+}
+ 
+.button-75 span {
+  transition: all 200ms;
+}
+ 
+.button-75:hover span {
+  transform: scale(.9);
+  opacity: .75;
+}
+ 
+@media screen and (max-width: 991px) {
+  .button-75 {
+    font-size: 15px;
+    height: 50px;
+  }
+ 
+  .button-75 span {
+    line-height: 50px;
+  }
+}
+    </style>
+ 
+</head>
+ 
+<body id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container px-5">
+            <a class="navbar-brand" href="/">Welcome</a>
+            <% if (user) { %>
+                <a class="navbar-brand" href="/logout">Logout of <%= user.username %></a>
+            <% } else { %>
+                <!-- You can add login and signup links here if needed -->
+            <% } %>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <!--<li class="nav-item"><a class="nav-link" href="../login2.html" target="_blank">Sign Up</a></li>-->
+                    <!--<li class="nav-item"><a class="nav-link" href="../login.html" target="_blank">Log In</a></li>-->
+                </ul>
+            </div>
+        </div>
+        
+    </nav>
+ 
+    <div aria-label="Account Controls and Settings" Class="ACC form-container">
+    <fieldset style="width: 300px;">
+        <legend>Edit Info</legend>
+        <form id="editform" action="/user/edituser/<%= myusers[0].username %>" method="post">
+            <label for="username" style="font-size: 0.9em;">Username:</label>
+            <input type="text" placeholder="Username" id="txtNewUserName" name="username" style="width: 80%;" value="<%= myusers[0].username %>">
+            <br>
+            <label for="txtFirstName" style="font-size: 0.9em;">First Name:</label>
+            <input type="text" placeholder="First Name" id="txtFirstName" name="first_name" style="width: 80%;" value="<%= myusers[0].first_name %>">
+            <br>
+            <label for="txtLastName" style="font-size: 0.9em;">Last Name:</label>
+            <input type="text" placeholder="Last Name" id="txtLastName" name="last_name" style="width: 80%;" value="<%= myusers[0].last_name %>" >
+            <br>    
+            <label for="txtEmail" style="font-size: 0.9em;">Email:</label>
+            <input type="email" placeholder="Email" id="txtEmail" name="email"  style="width: 80%;" value="<%= myusers[0].email %>">
+            <br>
+            <label for="txtNewPassword" style="font-size: 0.9em;">Password:</label>
+            <input type="password" placeholder="Password" id="txtNewPassword" name="password" class="password-input" style="width: 100%; padding-right: 30px;"  value="<%= myusers[0].password %>">
+            <br><br>
+            <button class="button-75"  type ="submit" role="button"  ><span class="text">Update</span></button>
+        </form>
+    </fieldset>
+    </div>
+</body>
+</html>

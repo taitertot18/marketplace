@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Notusingthis.com</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 20px auto;
+      font-family: 'Lato';
+      background: #ffffff;
+      color: #fff;
+      padding-top: 70px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    h2 {
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    p {
+      font-family: 'Reenie Beanie';
+      font-size: 2rem;
+    }
+
+    ul,
+    li {
+      list-style: none;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: #000;
+      background: #ffc;
+      display: block;
+      height: 20em;
+      width: 20em;
+      padding: 1.5em;
+      box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+      transform: rotate(-6deg);
+      transition: transform .15s linear;
+    }
+
+    ul li:nth-child(even) a {
+      transform: rotate(4deg);
+      position: relative;
+      top: 5px;
+      background: #cfc;
+    }
+
+    ul li:nth-child(3n) a {
+      transform: rotate(-3deg);
+      position: relative;
+      top: -5px;
+      background: #ccf;
+    }
+
+    ul li:nth-child(5n) a {
+      transform: rotate(5deg);
+      position: relative;
+      top: -10px;
+    }
+
+    ul li a:hover,
+    ul li a:focus {
+      box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+      transform: scale(1.25);
+      position: relative;
+      z-index: 5;
+    }
+
+    /* ul li { */
+      /* margin: 1em; */
+      /* margin-top: 3em; */
+    /* } */
+
+    .memo-content {
+      pointer-events: none;
+      word-wrap: break-word;
+      font-size: clamp(1.3rem, 2vw, 2rem);
+    }
+
+    .memo-content-container {
+      max-height: 15em;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .memo-content-container:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      height: 1em;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #666 80%);
+    }
+
+    .small-text {
+      font-size: 1.3rem;
+    }
+
+    .dynamic-memo-content-container {
+      max-height: none;
+    }
+
+    .image-button {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body id="page-top">
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container px-5">
+        <a class="navbar-brand" href="/">Welcome</a>
+
+        <% if (user) { %>
+            <a class="navbar-brand" href="/add">Add Post</a>
+
+            <% if (user.username) { %>
+                <!--<a class="navbar-brand" href="/editpost/<%= requestedUsername %>">Edit Post</a>-->
+                <a class="navbar-brand" href="/editpost">Edit Post</a>
+                <a class="navbar-brand" href="/<%= user.username %>">Edit User Info</a>
+                <a class="navbar-brand" href="/logout">Logout of <%= user.username %></a>
+            <% } %>
+        <% } else { %>
+            <a class="navbar-brand" href="/login">Sign Up/Login</a>
+        <% } %>
+
+        <!-- Rest of your navbar content -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <!-- Additional navbar items -->
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <!-- <div style="display: flex; justify-content: flex-end; margin-right: 20px; margin-top: 20px;">
+        <a href="/category/book">
+            <img src="/assets/img/Books.png" alt="Books" class="image-button">
+        </a>
+        <a href="/category/electronics">
+            <img src="/assets/img/electronic.png" alt="Electronics" class="image-button">
+        </a>
+        <a href="/category/writingTools">
+            <img src="/assets/img/WritingTools.png" alt="Writing Tools" class="image-button">
+        </a>
+        <a href="/category/calculator">
+            <img src="/assets/img/calculator.png" alt="Calculators" class="image-button">
+        </a>
+        <a href="/category/Other">
+            <img src="/assets/img/other.png" alt="Other" class="image-button">
+        </a>
+    </div> -->
+
+    <div style="display: flex; justify-content: center; align-items: flex-start; height: 30vh;">
+      <a href="/category/book">
+          <img src="/assets/img/Books.png" alt="Books" class="image-button" style="width: 150px; height: 150px;">
+      </a>
+      <a href="/category/electronics">
+          <img src="/assets/img/electronic.png" alt="Electronics" class="image-button" style="width: 150px; height: 150px;">
+      </a>
+      <a href="/category/writingTools">
+          <img src="/assets/img/WritingTools.png" alt="Writing Tools" class="image-button" style="width: 150px; height: 150px;">
+      </a>
+      <a href="/category/calculator">
+          <img src="/assets/img/calculator.png" alt="Calculators" class="image-button" style="width: 150px; height: 150px;">
+      </a>
+      <a href="/category/Other">
+          <img src="/assets/img/other.png" alt="Other" class="image-button" style="width: 150px; height: 150px;">
+      </a>
+  </div>
+
+  <ul>
+    <% for (let iCount = 0; iCount < myitems.length; iCount++) { %>
+    <li>
+      <a href="#">
+        <div>
+          <form>
+            <h2 class="memo-content" name="item"><%= myitems[iCount].item %></h2>
+            <span class="memo-content small-text" name="description">Description: <%= myitems[iCount].description %></span>
+            <br>
+            <span class="memo-content small-text" name="date_posted">Date posted: <%= myitems[iCount].date_posted %></span>
+            <br>
+            <span class="memo-content small-text" name="item_condition">Condition: <%= myitems[iCount].item_condition %></span>
+            <br>
+            <span class="memo-content small-text" name="availability">Availability: <%= myitems[iCount].availability %></span>
+            <br>
+            <span class="memo-content small-text" name="email">Email: <%= myitems[iCount].email %></span>
+            <br>
+            <span class="memo-content small-text" name="item">
+
+              <% if (myitems[iCount].item === 'book') { %>
+                <img src="/assets/img/Books.png" alt="book" class="image-button" style="width: 50px; height: 50px;">
+              <% } else if (myitems[iCount].item === 'calculator') { %>
+                <img src="/assets/img/calculator.png" alt="calculator" class="image-button" style="width: 50px; height: 50px;">
+              <% } else if (myitems[iCount].item === 'electronics') { %>
+                <img src="/assets/img/electronic.png" alt="electronics" class="image-button" style="width: 50px; height: 50px;">
+              <% } else if (myitems[iCount].item === 'writingTools') { %>
+                  <img src="/assets/img/WritingTools.png" alt="writingTools" class="image-button" style="width: 50px; height: 50px;">
+              <% } else if (myitems[iCount].item === 'Other') { %>
+                  <img src="/assets/img/other.png" alt="Other" class="image-button" style="width: 50px; height: 50px;">
+              <% } else { %>
+                <%= myitems[iCount].item %>
+              <% } %>
+            </span>
+            
+            <br>
+          </form>
+        </div>
+      </a>
+    </li>
+    <% } %>
+  </ul>
+
+  <script>
+    function handleButtonClick(buttonNumber) {
+      // Implement the logic for each button click
+      alert("Button " + buttonNumber + " clicked!");
+    }
+  </script>
+</body>
+
+</html>

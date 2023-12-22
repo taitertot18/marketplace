@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Notusingthis.com</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+ 
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        background-image: url('assets/img/5.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        }
+ 
+        h1 {
+        text-align: center;
+        color: #333;
+        }
+ 
+        .ACC {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 20px;
+        }
+ 
+        fieldset {
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        margin: 10px;
+        padding: 10px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 260px; /* Slightly reduced width */
+        max-width: calc(100% - 20px); /* Adjusted maximum width */
+        overflow: hidden; /* Hides any content that overflows */
+        }
+ 
+        fieldset img {
+        opacity: 0.5; /* You can adjust the opacity value (0 being fully transparent, 1 being fully visible) */
+        }
+ 
+        legend {
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #333;
+        }
+ 
+        label {
+        display: block;
+        margin-bottom: 8px;
+        color: #555;
+        }
+ 
+ 
+        input {
+        width: calc(100% - 16px);
+        padding: 5px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        font-size: 14px;
+        border-radius:10px;
+        background-color: #fafafa;
+        border:0;
+        box-shadow:0 0 4px rgba(0,0,0,0.3);
+        transition: .3s box-shadow;
+        }
+ 
+        .input:hover {
+        box-shadow:0 0 4px rgba(57, 56, 56, 0.5);
+        }
+       
+        /*
+        button {
+        padding: 4px;
+        font-size: 14px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        }
+ 
+        button:hover {
+        background-color: #0056b3;
+        }
+ 
+        */
+ 
+        #outputMessage {
+        text-align: center;
+        margin-top: 20px;
+        color: orange;
+        font-size: 18px;
+        }
+ 
+        .form-container {
+            margin-top: 100px; /* Adjust this value to leave space for the navbar */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+ 
+        /* Adjust the width and margin as needed for the fieldsets */
+        .form-container fieldset {
+            /* ... Your existing fieldset styles ... */
+            width: 300px;
+            margin: 10px;
+        }
+ 
+        .password-container {
+    position: relative;
+    width: 80%;
+    margin-bottom: 10px;
+    }
+ 
+    .password-container input[type="password"] {
+    width: 100%;
+    padding-right: 30px;
+    font-size: 14px;
+    }
+ 
+    .password-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    cursor: pointer;
+    width: 20px; /* Adjust this as per the image size */
+        }  
+ 
+ 
+ 
+/* CSS */
+.form-container fieldset form button {
+  display: inline-block;
+  margin: 0 5px; /* Adjust the margin for desired spacing */
+}
+ 
+.button-75 {
+  align-items: center;
+  background-image: linear-gradient(135deg, #817579 40%, #c4bdb9);
+  border: 0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  font-family: "Codec cold",sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  height: 54px;
+  max-width: 100%;
+  text-decoration: none;
+  text-transform: uppercase;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  padding: 18px;
+}
+ 
+.button-75:active {
+  outline: 0;
+}
+ 
+.button-75:hover {
+  outline: 0;
+  background-image: linear-gradient(135deg, #b85979 40%, #c4bdb9);
+}
+ 
+.button-75 span {
+  transition: all 200ms;
+}
+ 
+.button-75:hover span {
+  transform: scale(.9);
+  opacity: .75;
+}
+ 
+@media screen and (max-width: 991px) {
+  .button-75 {
+    font-size: 15px;
+    height: 50px;
+  }
+ 
+  .button-75 span {
+    line-height: 50px;
+  }
+}
+    </style>
+ 
+</head>
+ 
+<body id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container px-5">
+            <a class="navbar-brand" href="/">Welcome</a>
+    
+            <!-- Rest of your navbar content -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Additional navbar items -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+ 
+    <div aria-label="Account Controls and Settings" Class="ACC form-container">
+    <fieldset style="width: 300px;">
+        <legend>Sign Up</legend>
+        <form id="signupForm" action="/signup" method="post">
+            <!-- <label for="txtFirstName" style="font-size: 0.9em;">First Name:</label> -->
+            <input type="text" placeholder="First Name" id="txtFirstName" name="first_name" style="width: 80%;" required>
+            <br>
+            <!--<label for="txtLastName" style="font-size: 0.9em;">Last Name:</label>-->
+            <input type="text" placeholder="Last Name" id="txtLastName" name="last_name" style="width: 80%;"  required>
+            <br>
+            <!--<label for="txtNewUserName" style="font-size: 0.9em;">Username:</label>-->
+            <input type="text" placeholder="Username" id="txtNewUserName" name="username" style="width: 80%;"  required>
+            <br>
+            <!--<label for="txtEmail" style="font-size: 0.9em;">Email:</label>-->
+            <input type="email" placeholder="Email" id="txtEmail" name="email"  style="width: 80%;" required>
+            <br>
+            <!--<label for="txtNewPassword" style="font-size: 0.9em;">Password:</label>-->
+            <div class = "password-container">
+                <input type="password" placeholder="Password" id="txtNewPassword" name="password" class="password-input" style="width: 100%; padding-right: 30px;"  required>
+                <img src="assets/img/eye-close.png" class="password-icon" id="btnShowNew" onclick="toggleNewPassword();">
+                <!-- <button type="button" id="btnShowNew" onclick="toggleNewPassword();" style="margin-left: 5px; padding: 5px;">Show</button> -->
+            </div>
+            <p id="passwordRequirements" style="color: #555; font-size: 12px; margin-top: 5px;"></p>
+            <br>
+            <button class="button-75"  type ="submit" role="button"  onclick="validateAndCreateAccount();"><span class="text">Create Account</span></button>
+            <button class="button-75" role="button" onclick="resetSignUpForm();"><span class="text">Reset</span></button>
+ 
+            <!--<button type="button" onclick="validateAndCreateAccount();">Create Account</button>-->
+           <!--<button type="button" onclick="resetSignUpForm();">Reset</button>-->
+         
+           
+ 
+        </form>
+ 
+ 
+        <p id="outputMessage" style="text-align: center; color: orange; margin-top: 20px; font-size: 15px;"></p>
+    </fieldset>
+ 
+       
+ 
+    <br><br>
+ 
+    <!-- Login Section -->
+    <fieldset style="width: 300px;">
+        <legend>Login</legend>
+        <form id="loginForm" onsubmit="return validateLogin();" action="/login" method="post">
+            <!--<label for="txtUserName" style="font-size: 0.9em;">Username:</label>-->
+            <input type="text" placeholder="Username" id="txtUserName" name = "username" style="width: 80%;" required>
+            <br>
+            <!--<label for="txtLoginPassword" style="font-size: 0.9em;">Password:</label>-->
+            <div class = "password-container">
+                <input type="password" placeholder="Password" id="txtLoginPassword" name="password" class="password-input" style="width: 100%; padding-right: 30px;"  required>
+                <img src="assets/img/eye-close.png" class="password-icon" id="btnShowLogin" onclick="toggleLoginPassword();">
+                <!--<button type="button" id="btnShowLogin" onclick="toggleLoginPassword();" style="margin-left: 5px; padding: 5px;">Show</button>-->
+            </div>
+           
+            <button class="button-75" role="button" type="submit"><span class="text">Login</span></button>
+            <button class="button-75" role="button" onclick="resetLoginForm();"><span class="text">Reset</span></button>
+            <!--<button type="submit">Login</button>-->
+            <!--<button type="button" onclick="resetLoginForm();">Reset</button>-->
+        </form>
+    </fieldset>
+    <br><br>
+
+
+            
+      
+ 
+ 
+ 
+ 
+    <script>
+ 
+            // Check if the success message exists and hide the form accordingly
+    const successMessage = "<%= typeof successMessage !== 'undefined' ? successMessage : '' %>";
+    if (successMessage) {
+        document.getElementById("signupForm").style.display = "none";
+        document.getElementById("outputMessage").innerHTML = successMessage + "<br><button class=\"button-75\" style=\"display: block; margin: 0 auto;\" onclick='returnToSignUp()'>Return to sign up</button>";
+    }
+   
+    // Function to return to signup
+    function returnToSignUp() {
+        // Clear the success message
+        document.getElementById("outputMessage").innerHTML = "";
+        // Show the signup form again
+        document.getElementById("signupForm").style.display = "block";
+        // Show the login form again
+        document.getElementById("loginForm").style.display = "block";
+        // Reset the signup form
+        resetSignUpForm();
+    }
+ 
+ 
+ 
+ 
+        let bShowNew = false;
+        let bShowLogin = false;
+ 
+ 
+        function toggleNewPassword() {
+    let newPasswordInput = document.getElementById("txtNewPassword");
+    let eyeIcon = document.getElementById("btnShowNew");
+ 
+    if (bShowNew) {
+        newPasswordInput.type = "password";
+        eyeIcon.src = "assets/img/eye-close.png";
+    } else {
+        newPasswordInput.type = "text";
+        eyeIcon.src = "assets/img/eye-open.png";
+    }
+ 
+    bShowNew = !bShowNew;
+}
+ 
+function toggleLoginPassword() {
+    let loginPasswordInput = document.getElementById("txtLoginPassword");
+    let eyeIcon = document.getElementById("btnShowLogin");
+ 
+    if (bShowLogin) {
+        loginPasswordInput.type = "password";
+        eyeIcon.src = "assets/img/eye-close.png";
+    } else {
+        loginPasswordInput.type = "text";
+        eyeIcon.src = "assets/img/eye-open.png";
+    }
+ 
+    bShowLogin = !bShowLogin;
+}
+ 
+ 
+document.getElementById("txtNewPassword").addEventListener("input", updatePasswordRequirements);
+ 
+function updatePasswordRequirements() {
+    let password = document.getElementById("txtNewPassword").value;
+    let requirementsMessage = document.getElementById("passwordRequirements");
+ 
+    // Check password requirements and update the message accordingly
+    let requirementsMet = password.length >= 8 && /[a-zA-Z]/.test(password) && /\d/.test(password);
+ 
+    if (requirementsMet) {
+        requirementsMessage.style.color = "#4CAF50"; // Green color for success
+        requirementsMessage.innerHTML = "Password meets the requirements.";
+    } else {
+        requirementsMessage.style.color = "#FF0000"; // Red color for failure
+        requirementsMessage.innerHTML = "Password must be at least 8 characters long and contain at least 1 letter and 1 number.";
+    }
+}
+ 
+ 
+function isDuplicateEmail(email) {
+    return userData.some(user => user.email === email);
+}
+ 
+        function validateAndCreateAccount() {
+            let firstName = document.getElementById("txtFirstName").value;
+            let lastName = document.getElementById("txtLastName").value;
+            let newUserName = document.getElementById("txtNewUserName").value;
+            let email = document.getElementById("txtEmail").value;
+            let newPassword = document.getElementById("txtNewPassword").value;
+ 
+            // Validate email format
+            if (!email.includes('@')) {
+                alert("Invalid email format");
+                return;
+            }
+ 
+            // Check for duplicate email
+            if (isDuplicateEmail(email)) {
+                alert("Invalid email. Email already exists.");
+                return;
+            }
+ 
+ 
+ 
+                // Reset the sign-up form
+            resetSignUpForm();
+ 
+                    // Hide the signup form after showing the message
+        document.getElementById("signupForm").style.display = "none";
+        // Display success message or perform other actions
+        document.getElementById("outputMessage").innerHTML = "Account created for " + newUserName + ". <br><button class=\"button-75\" style=\"display: block; margin: 0 auto;\" onclick='returnToSignUp()'>Return to sign up</button>";
+ 
+ 
+ 
+ 
+ 
+        }
+ 
+ 
+       
+ 
+       
+ 
+                function returnToSignUp() {
+            // Clear the success message
+            document.getElementById("outputMessage").innerHTML = "";
+            // Show the sign-up form again
+            document.getElementById("signupForm").style.display = "block";
+            // Reset the sign-up form
+            resetSignUpForm();
+        }
+       
+ 
+       
+ 
+        function isDuplicateUsername(username) {
+            return userData.some(user => user.username === username);
+        }
+ 
+        function validateLogin() {
+            let username = document.getElementById("txtUserName").value;
+            let password = document.getElementById("txtLoginPassword").value;
+ 
+            // Check if the username exists in the database
+            let user = userData.find(user => user.username === username);
+ 
+            if (!user) {
+                alert("Invalid username.");
+                return false; // Prevent form submission
+            }
+ 
+            // Check if the password is correct
+            if (user.password !== password) {
+                alert("Incorrect password.");
+                return false; // Prevent form submission
+            }
+ 
+            // If both username and password are correct, allow form submission
+            return true;
+        }
+ 
+        function resetSignUpForm() {
+            document.getElementById("signupForm").reset();
+   
+           
+            // Reset any additional elements or messages if needed
+        }
+ 
+        function resetLoginForm() {
+            document.getElementById("loginForm").reset();
+           
+            // Reset any additional elements or messages if needed
+        }
+ 
+ 
+    </script>
+       
+       
+       
+       
+ 
+ 
+    </div>
+   
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!-- Section 2 Group 14 -->
+<!--
+Group Members
+Elijah Aken
+Lily Tait
+Wing Yu Chu
+Caitlyn Stokes --> 
+<!--This is the login where Admins will be directed to when they succesfully logged in
+to view both survey and Employee Data-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Edit User Data</title>
+    <link rel="icon" type="image/x-icon" href="/logo copy.png" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="./filter.js"></script>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+    
+    <!-- Your custom styles -->
+    
+</head>
+
+<style>
+    body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.navbar-custom {
+    background-color: #333;
+}
+
+.navbar-brand-img {
+    max-height: 40px;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+fieldset {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: calc(100% - 20px);
+    overflow: hidden;
+}
+
+input {
+    width: calc(100% - 16px);
+    padding: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 10px;
+    background-color: #fafafa;
+    border: 0;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    transition: .3s box-shadow;
+}
+
+.input:hover {
+    box-shadow: 0 0 4px rgba(57, 56, 56, 0.5);
+}
+
+.button-75 {
+    align-items: center;
+    background-image: linear-gradient(135deg, #817579 40%, #c4bdb9);
+    border: 0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    font-family: "Codec cold", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    height: 54px;
+    max-width: 100%;
+    text-decoration: none;
+    text-transform: uppercase;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    padding: 18px;
+}
+
+.button-75:active {
+    outline: 0;
+}
+
+.button-75:hover {
+    outline: 0;
+    background-image: linear-gradient(135deg, #b85979 40%, #c4bdb9);
+}
+
+.button-75 span {
+    transition: all 200ms;
+}
+
+.button-75:hover span {
+    transform: scale(.9);
+    opacity: .75;
+}
+
+body2 {
+    margin-top: 100px;
+}
+
+.table-wrapper {
+    max-height: 500px; /* Set the maximum height for the table wrapper */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Adjust the width and height as needed */
+.small-search {
+    width: 150px; /* Set the desired width */
+    height: 30px; /* Set the desired height */
+    /* Add any other styles you want */
+}
+
+
+
+</style>
+<body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+            <div class="container px-5">
+                <a class="navbar-brand" href="#page-top">
+                    <img class="navbar-brand-img" src="/Untitled design.png" alt="Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="/login">Log In/Sign Up</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    <!-- Your EJS template (data.ejs) -->
+   <br>
+   <br>
+   <br>
+   <br>
+    <h1>User Info List</h1>
+    <p>These are the users who have taken the survey so far in Provo.</p>
+
+    <input type="text" id="myInput" class="small-search" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+    <br>
+
+<br>  
+    <fieldset width="100" Height="500px">
+        <% if (user.length > 0) { %>
+            <div class="outer-wrapper">
+                <div class="table-wrapper">
+                <table id="myTable">
+                <thead>
+                    <tr>
+                        <th>Item ID</th>
+                        <th>Item Type</th>
+                        <th>Description</th>
+                        <th>Date Posted</th>
+                        <th>Cost</th>
+                        <th>Condition (New, Used, Fair)</th>
+                        <th>Other</th>
+                        <th>Availability (Sold/Availible)</th>
+                        <th>Email</th>
+                        <!-- Add other table headers as needed -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <% user.forEach(userinfo => { %>
+                        <tr>
+                            <td><%= userinfo.itemid %></td>
+                            <td><%= userinfo.itemtype %></td>
+                            <td><%= userinfo.description %></td>
+                            <td><%= userinfo.dateposted %></td>
+                            <td><%= userinfo.cost %></td>
+                            <td><%= userinfo.condition %></td>
+                            <td><%= userinfo.other %></td>
+                            <td><%= userinfo.availability %></td>
+                            <td><%= userinfo.email %></td>
+                            <!-- Add other table data as needed -->
+                            <td>
+                                <!-- Inline form for editing -->
+                                <form action="/data/edit/<%= userinfo.userid %>" method="get">
+                                    <!-- Assuming you want a button to trigger the form submission -->
+                                    <button type="submit">Edit</button>
+                                </form>
+                            </td>
+                        </tr>
+
+                        <!-- Inline form for editing user data -->
+                        <% if (editUserId && editUserId === userinfo.userid) { %>
+                            
+                        <% } %>
+                    <% }); %>
+                </tbody>
+            </table>
+
+            <script>
+                function myFunction() {
+                  var input, filter, table, tr, td, i, txtValue;
+                  input = document.getElementById("myInput");
+                  filter = input.value.toUpperCase();
+                  table = document.getElementById("myTable");
+                  tr = table.getElementsByTagName("tr");
+                  for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[0];
+                    if (td) {
+                      txtValue = td.textContent || td.innerText;
+                      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                      } else {
+                        tr[i].style.display = "none";
+                      }
+                    }       
+                  }
+                }
+                window.onload = () => {
+                    console.log(document.querySelector("#myTable > tbody > tr:nth-child(1) > td:nth-child(2) ").innerHTML);
+                    };
+                
+                getUniqueValuesFromColumn()
+                        
+            </script>
+        <% } else { %>
+            <p>No user data available</p>
+        <% } %>
+    </fieldset>
+
+    <br>
+    <br>
+    <h1>Authentication Data</h1>
+   <fieldset width="100" Height="500px"> 
+    <table border="1">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>User Type</th>
+                
+                <!-- Add other columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <% authenticationData.forEach(user => { %>
+                <tr>
+                    <td><%= user.userid %></td>
+                    <td><%= user.fname %></td>
+                    <td><%= user.lname %></td>
+                    <td><%= user.username %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.password %></td>
+                    <td><%= user.usertype %></td>
+                    <td>
+                        <!-- Inline form for editing -->
+                        <form action="/data/AdminEdit/<%= user.member_id %>" method="get">
+                            <!-- Assuming you want a button to trigger the form submission -->
+                            <button type="submit">Edit</button>
+                        </form>
+                    </td>
+                    <!-- Add other columns as needed -->
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    </fieldset>
+        
+        
+    
+    <br><br><br>
+    <a href="/add" style="text-decoration: none; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Take the Survey</a>
+
+    <br>
+    <br>
+
+</body>
+
+
+
+
+</html>

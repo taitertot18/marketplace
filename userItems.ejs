@@ -1,0 +1,324 @@
+<!-- Section 2 Group 14 -->
+<!--
+Group Members
+Elijah Aken
+Lily Tait
+Wing Yu Chu
+Caitlyn Stokes --> 
+<!--This is the page where users will go on to post what items they want to sell.-->
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Notusingthis.com</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<!-- CSS -->
+<style>
+.range-container {
+margin-bottom: 20px;
+position: relative;
+}
+
+.slider-container {
+position: relative;
+}
+
+.slider-value {
+font-size: 16px;
+position: absolute;
+width: 120%; /* Adjust as needed for length */
+text-align: center;
+margin-top: 25px; /* Adjust as needed for spacing */
+display: flex;
+justify-content: space-between;
+left: -10%; /* Adjust to center the slider-value */
+}
+
+input[type="range"] {
+width: 100%; /* Adjust as needed for length */
+}
+
+
+body {
+font-family: Arial, sans-serif;
+background-color: #f4f4f4;
+margin: 0;
+padding: 0;
+background-image: url('assets/img/5.jpg');
+background-size: cover;
+background-attachment: fixed;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.survey-container {
+    text-align: center;
+}
+
+h1 {
+text-align: center;
+color: rgb(0, 0, 0);
+margin-top: 0;
+}
+
+.ACC {
+display: flex;
+justify-content: center;
+align-items: flex-start;
+margin-top: 20px;
+}
+
+.form-container {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column; /* Stack children vertically */
+/* height: 100vh; */
+}
+
+fieldset {
+border: 2px solid #ccc;
+border-radius: 8px;
+margin: 20px;
+padding: 10px;
+background-color: #fff;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+max-width: 800px; /* Adjust the maximum width as needed */
+}
+
+fieldset img {
+opacity: 0.5; /* You can adjust the opacity value (0 being fully transparent, 1 being fully visible) */
+}
+
+legend {
+font-weight: bold;
+font-size: 1.2em;
+color: #333;
+}
+
+label {
+display: block;
+margin-bottom: 8px;
+color: #555;
+}
+
+
+input {
+/* padding: 5px; */
+margin-bottom: 10px;
+box-sizing: border-box;
+font-size: 14px;
+border-radius:10px;
+background-color: #fafafa;
+border:0;
+box-shadow:0 0 4px rgba(0,0,0,0.3);
+transition: .3s box-shadow;
+}
+
+.input:hover {
+box-shadow:0 0 4px rgba(57, 56, 56, 0.5);
+}
+
+button {
+padding: 4px;
+font-size: 14px;
+background-color: #007bff;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+button:hover {
+background-color: #0056b3;
+}
+
+
+#outputMessage {
+text-align: center;
+margin-top: 20px;
+color: orange;
+font-size: 18px; 
+}
+
+
+.password-container {
+position: relative;
+width: 80%;
+margin-bottom: 10px; 
+}
+
+.password-container input[type="password"] {
+width: 100%;
+padding-right: 30px;
+font-size: 14px;
+}
+
+.password-icon {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+right: 5px;
+cursor: pointer;
+width: 20px; 
+}   
+
+.button-75 {
+align-items: center;
+background-image: linear-gradient(135deg, #817579 40%, #c4bdb9);
+border: 0;
+border-radius: 8px;
+box-sizing: border-box;
+color: #fff;
+cursor: pointer;
+display: flex;
+justify-content: center;
+font-family: "Codec cold",sans-serif;
+font-size: 12px;
+font-weight: 700;
+height: 54px;
+max-width: 100%;
+text-decoration: none;
+text-transform: uppercase;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+padding: 18px;
+}
+
+.button-75:active {
+outline: 0;
+}
+
+.button-75:hover {
+outline: 0;
+background-image: linear-gradient(135deg, #b85979 40%, #c4bdb9);
+}
+
+.button-75 span {
+transition: all 200ms;
+}
+
+.button-75:hover span {
+transform: scale(.9);
+opacity: .75;
+}
+
+@media screen and (max-width: 991px) {
+.button-75 {
+font-size: 15px;
+height: 50px;
+}
+
+.button-75 span {
+line-height: 50px;
+}
+}
+
+.range-container {
+width: 80%;
+margin: 20px auto;
+text-align: center;
+width: calc(55% - 10px); 
+}
+
+.slider-value {
+display: flex;
+justify-content: space-between;
+margin-top: 0.5px; 
+}
+
+.slider-value span {
+flex: 1; 
+text-align: center;
+}
+
+</style>
+<body>
+    
+<!-- This is the nav bar for our header -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container px-5">
+        <a class="navbar-brand" href="/">Welcome</a>
+        <a class="navbar-brand" href="/login">Sign Up/Log In</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <!-- <li class="nav-item"><a class="nav-link" href="/login" target="_blank">Sign Up</a></li>
+                <li class="nav-item"><a class="nav-link" href="/login" target="_blank">Log In</a></li> -->
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- This uses CSS and starts a form for the user to fill out data. -->
+<!-- Your EJS template (editProfile.ejs) -->
+<div class="survey-container">
+    <br><br><br><br><br>
+    <h1>Edit Item</h1>
+    <fieldset style="width: 500px;">
+        <form method="post" action="/updateProfile" id="editProfileForm">
+
+            <!-- Input field for item-->
+            <label for="item">Item type</label>
+            <select id="item" name="item" required>
+                <option value="book" <%= userData.item === 'book' ? 'selected' : '' %>>Books</option>
+                <option value="calculator" <%= userData.item === 'calculator' ? 'selected' : '' %>>Calculator</option>
+                <option value="electronics" <%= userData.item === 'electronics' ? 'selected' : '' %>>Electronics</option>
+                <option value="writingTools" <%= userData.item === 'writingTools' ? 'selected' : '' %>>Writing Tools</option>
+                <option value="Other" <%= userData.item === 'calculator' ? 'selected' : '' %>>Calculator</option>
+                <!-- Add options for other item types -->
+            </select><br><br>
+
+            <!-- Input field for the item description -->
+            <label for="description">Write a description of the item:</label>
+            <textarea id="description" name="description" placeholder="Type your description here..."><%= userData.description %></textarea>
+            <br><br>
+
+            <label for="email">Enter an Email to be contacted by:</label>
+            <input type="text" name="email" id="email" value="<%= userData.email %>">
+            <br><br>
+
+            <!-- Input field for date posted-->
+            <label for="date_posted">Today's date:</label>
+            <input type="date" id="date_posted" name="date_posted" value="<%= userData.date_posted %>">
+            <br><br>
+
+            <!-- Input field for condition-->
+            <label for="item_condition">Condition</label>
+            <select id="item_condition" name="item_condition" required>
+                <option value="new" <%= userData.item_condition === 'new' ? 'selected' : '' %>>New</option>
+                <option value="used" <%= userData.item_condition === 'used' ? 'selected' : '' %>>Used</option>
+                <option value="fair" <%= userData.item_condition === 'fair' ? 'selected' : '' %>>Fair</option>
+            </select><br><br>
+
+            <!-- Input field for availability-->
+            <label for="availability">Availability</label>
+            <select id="availability" name="availability" required>
+                <option value="Sold" <%= userData.availability === 'Sold' ? 'selected' : '' %>>Sold</option>
+                <option value="Availiable" <%= userData.availability === 'Availiable' ? 'selected' : '' %>>Availiable</option>
+            </select><br><br>
+
+            <!-- Button to update profile -->
+            <button type="submit">Update Item</button>
+            <br><br><br>
+        </form>
+    </fieldset>
+</div>
+
+</html>
